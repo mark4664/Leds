@@ -39,7 +39,7 @@ class LEDBoard:
 
     def test_all_leds_c(self,duration):
         for colour in self.pin_colour.keys():
-            test_led_c(self,colour,duration)
+            self.test_led_c(self,colour,duration)
 
     #def test_led_p(self,pin,duration):
     #    self.led_p[pin].on()
