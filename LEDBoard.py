@@ -1,23 +1,27 @@
 #!/usr/bin/python3
-
+ 
 # Peter Normington
 # 2019-10-11
+# Changes by MGB 19/10/12
                                                                                                                                                            
 from gpiozero import LED, Button
-from time import sleep          
+from time import sleep
+
+# Dictionary of LEDs to be set up for Marks instance
+MarksLeds = {"Green":17,
+                       "Yellow":18,
+                       "Red":19
+                      }
+
+MarksButtons = {"Master": 21}
+
 
 class LEDBoard:
-    def __init__(self):
+    def __init__(self,LedsPins,ButtonsPins):
         
-        self.pin_colour = {
-            "Green":17,
-            "Yellow":18,
-            "Red":19,
-        }
+        self.pin_colour = LedsPins
         
-        self.pin_button = {                                                                                                                                                                                                                                                                                                                                                                                                                                                             
-            "Master":21,
-        }
+        self.pin_button = ButtonsPins                                                                                                                                                                                                                                                                                                                                                                                                           
         
         # LEDs are keyed by colour
         self.led = {}
@@ -50,7 +54,7 @@ class LEDBoard:
 # Self tests
 if __name__ == '__main__':
     print("LED and button test program")
-    marksboard = LEDBoard()
+    marksboard = LEDBoard(MarksLeds,MarksButtons)
     print("Testing the Green LED")
     marksboard.test_led("Green",3)
     sleep(3)
