@@ -15,6 +15,17 @@ MarksLeds = {"Green":17,
 
 MarksButtons = {"Master": 21}
 
+#
+# You could now create a second instance of the class
+# so long as you don't double allocate the IO pin numbers
+
+# PetersLeds = {.......}
+# PetersButtons = {.......}
+#
+# Petersboard = LEDBoard(PeterssLeds,PetersButtons)
+#
+#
+#
 
 class LEDBoard:
     def __init__(self,LedsPins,ButtonsPins):
