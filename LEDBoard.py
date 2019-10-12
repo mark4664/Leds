@@ -2,7 +2,7 @@
 
 # Peter Normington
 # 2019-10-11
-
+                                                                                                                                                           
 from gpiozero import LED, Button
 from time import sleep          
 
@@ -16,7 +16,7 @@ class LEDBoard:
             "Blue":20,
         }
         
-        self.pin_button = {
+        self.pin_button = {                                                                                                                                                                                                                                                                                                                                                                                                                                                             
             "Master":21,
         }
         
@@ -24,13 +24,13 @@ class LEDBoard:
         self.led_c = {}
         # LEDs keyed by pin number
         self.led_p = {}
-        for colour,pin in self.pin_colour:
-            self.led_c[colour] = LED(pin)
-            self.led_p[pin] = LED(pin)
+        for colour in self.pin_colour.keys():
+            self.led_c[colour] = LED(self.pin_colour[colour])
+            self.led_p[self.pin_colour[colour]] = LED(self.pin_colour[colour])
         # Buttons keyed by name     
         self.button = {}
-        for name,pin in self.pin_button:
-            self.button["name"]=Button(pin)
+        for name in self.pin_button.keys():
+            self.button[name]=Button(self.pin_button[name])
     
     def test_led_c(self,colour,duration):
         self.led_c[colour].on()
@@ -54,7 +54,7 @@ class LEDBoard:
         print(name,self.button[name].value)
 
     def test_all_buttons_n(self):
-        for name in pin_button.Keys():
+        for name in pin_button.keys():
             self.test_button(name)
 
 # Self tests
