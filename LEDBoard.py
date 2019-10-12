@@ -21,8 +21,8 @@ class LEDBoard:
         
         # LEDs keyed by colour
         self.led_c = {}
-        for colour in self.pin_colour.keys():
-            self.led_c[colour] = LED(self.pin_colour[colour])
+        for colour,pin in self.pin_colour.items():
+            self.led_c[colour] = LED(pin)
         
         # Buttons keyed by name
         self.button = {}
