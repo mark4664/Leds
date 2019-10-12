@@ -50,10 +50,10 @@ class LEDBoard:
         for colour in self.pin_colour.values():
             test_led_p(self,colour,duration)
 
-    def test_button(self,name)
+    def test_button(self,name):
         print(name,self.button[name].value)
 
-    def test_all_buttons_n(self)
+    def test_all_buttons_n(self):
         for name in pin_button.Keys():
             self.test_button(name)
 
