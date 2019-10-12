@@ -44,7 +44,7 @@ class LEDBoard:
         print(name,self.button[name].value)
 
     def test_all_buttons_n(self):
-        for name in pin_button.keys():
+        for name in self.pin_button.keys():
             self.test_button(name)
 
 # Self tests
