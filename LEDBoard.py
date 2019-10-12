@@ -61,7 +61,7 @@ if __name__ == '__main__':
     marksboard.test_led_c("Red",3)
     sleep(3)
     print("Testing all LEDs by colour")
-    marksboard.test_all_leds_c(0.75,2)
+    marksboard.test_all_leds_c(2,1)
     sleep(3)
     print("Testing the button")
     marksboard.test_button("Master")
