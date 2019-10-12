@@ -36,7 +36,8 @@ class LEDBoard:
 
     def test_all_leds_c(self,duration,rest_interval):
         for colour in self.pin_colour.keys():
-            self.test_led_c(self,colour,duration)
+            print ("Colour: ",colour,"\nDuration: ", duration,"\nRest Interval:",rest_interval)
+            # self.test_led_c(self,colour,duration)
             sleep(rest_interval)
 
     def test_button(self,name):
@@ -59,9 +60,9 @@ if __name__ == '__main__':
     print("Testing the Red LED")
     marksboard.test_led_c("Red",3)
     sleep(3)
-    #print("Testing all LEDs by colour")
-    #marksboard.test_all_leds_c(0.75,2)
-    #sleep(3)
+    print("Testing all LEDs by colour")
+    marksboard.test_all_leds_c(0.75,2)
+    sleep(3)
     print("Testing the button")
     marksboard.test_button("Master")
     print("All done!")
