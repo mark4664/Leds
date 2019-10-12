@@ -37,7 +37,7 @@ class LEDBoard:
     def test_all_leds_c(self,duration,rest_interval):
         for colour in self.pin_colour.keys():
             print ("Colour: ",colour,"\nDuration: ", duration,"\nRest Interval:",rest_interval)
-            # self.test_led_c(self,colour,duration)
+            self.test_led_c(colour,duration)
             sleep(rest_interval)
 
     def test_button(self,name):
