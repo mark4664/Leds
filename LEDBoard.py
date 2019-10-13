@@ -13,6 +13,7 @@ class LEDBoard:
             "Green":17,
             "Yellow":18,
             "Red":19,
+            "Blue":20
         }
         
         self.pin_button = {                                                                                                                                                                                                                                                                                                                                                                                                                                                             
