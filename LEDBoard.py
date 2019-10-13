@@ -7,19 +7,11 @@ from gpiozero import LED, Button
 from time import sleep          
 
 class LEDBoard:
-    def __init__(self):
-        
-        self.pin_colour = {
-            "Green":17,
-            "Yellow":18,
-            "Red":19,
-            "Blue":20,
-        }
-        
-        self.pin_button = {                                                                                                                                                                                                                                                                                                                                                                                                                                                             
-            "Master":21,
-        }
-        
+    def __init__(self,pin_colour,pin_button):
+
+        self.pin_colour = pin_colour
+        self.pin_button = pin_button
+
         # LEDs are keyed by colour
         self.led = {}
         for colour,pin in self.pin_colour.items():
@@ -48,23 +40,34 @@ class LEDBoard:
         for name in self.pin_button.keys():
             self.test_button(name)
 
-# Self tests
+# Test the class
 if __name__ == '__main__':
     print("LED and button test program")
-    marksboard = LEDBoard()
+    # Set up the board configuration
+    peters_pin_colour = {
+            "Green":17,
+            "Yellow":18,
+            "Red":19,
+            "Blue":20,
+        }
+    peters_pin_button = {                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+            "Master":21,
+        }
+    petersboard = LEDBoard(peters_pin_colour,peters_pin_button)
+    # Run the tests
     print("Testing the Green LED")
-    marksboard.test_led("Green",3)
+    petersboard.test_led("Green",3)
     sleep(3)
     print("Testing the Yellow LED")
-    marksboard.test_led("Yellow",3)
+    petersboard.test_led("Yellow",3)
     sleep(3)
     print("Testing the Red LED")
-    marksboard.test_led("Red",3)
+    petersboard.test_led("Red",3)
     sleep(3)
     print("Testing all LEDs by colour")
-    marksboard.test_all_leds(2,1)
+    petersboard.test_all_leds(2,1)
     sleep(3)
     print("Testing the button after one second")
     sleep(1)
-    marksboard.test_button("Master")
+    petersboard.test_button("Master")
     print("All done!")
