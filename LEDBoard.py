@@ -22,6 +22,12 @@ class LEDBoard:
         for name,pin in self.pin_button.items():
             self.button[name]=Button(pin)
     
+    def light_led(self,colour):
+        self.led[colour].on()
+    
+    def extinguish_led(self,colour):
+        self.led[colour].off()
+    
     def test_led(self,colour,duration):
         self.led[colour].on()
         sleep(duration)
