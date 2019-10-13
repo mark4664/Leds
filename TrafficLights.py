@@ -14,7 +14,7 @@ class TrafficLights:
             "Red":19,
         }
         
-        self.tlboard = LEDBoard(tl_pin_colour,{})
+        self.tlboard = LEDBoard(tl_pin_colour)
 
     def activate(self):
         self.tlboard.light_led("Red")
