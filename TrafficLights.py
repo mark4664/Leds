@@ -36,7 +36,7 @@ if __name__ == '__main__':
     # Run until stopped by keyboard interrupt (Ctrl+C)
     try:
         while True:            
-        tl.activate()
-    except (Exception):
-        print("Traffic lights stopped")
+            tl.activate()
+    except (KeyboardInterrupt):
+        print("\nTraffic lights stopped")
 
