@@ -34,6 +34,9 @@ class TrafficLights:
 if __name__ == '__main__':
     tl = TrafficLights()
     # Run until stopped by keyboard interrupt (Ctrl+C)
-    while True:            
+    try:
+        while True:            
         tl.activate()
+    except (Exception):
+        print("Traffic lights stopped")
 
